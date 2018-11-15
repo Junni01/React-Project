@@ -29,6 +29,15 @@ namespace ReactAppV2.Controllers
             return View();
         }
 
+        public IActionResult React()
+        {
+            ViewData["Message"] = "React Page";
+
+            return View();
+        }
+
+
+
         public IActionResult Privacy()
         {
             return View();
