@@ -1,6 +1,6 @@
 ﻿const API = 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten';
 
-class App extends React.Component {
+class ApiTable extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,4 +50,8 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('content'));
+ReactDOM.render(<ApiTable />, document.getElementById('ApiTable'));
+
+
+
+

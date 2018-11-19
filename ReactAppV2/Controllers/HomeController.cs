@@ -15,26 +15,30 @@ namespace ReactAppV2.Controllers
             return View();
         }
 
-        public IActionResult About()
+
+        public IActionResult ApiTable()
         {
-            //ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "This component fetches 10 random jokes from a public API and displays them as a table";
 
             return View();
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
+        public IActionResult DataHandling()
+
+
+        {
+
+
+            ViewData["Variable1"] = 2;
             return View();
         }
 
-        public IActionResult React()
-        {
-            ViewData["Message"] = "React Page";
 
-            return View();
-        }
+
+
+
+
 
 
 
