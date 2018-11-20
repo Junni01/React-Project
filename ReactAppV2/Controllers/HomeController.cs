@@ -21,6 +21,7 @@ namespace ReactAppV2.Controllers
             ViewData["Message"] = "This component fetches 10 random jokes from a public API and displays them as a table";
 
             return View();
+
         }
 
 
@@ -28,19 +29,14 @@ namespace ReactAppV2.Controllers
 
 
         {
+            DataPackage data = new DataPackage() { id = 1, isActive = true, name = "datanode1", price = 23.23, description = "generic data packege from the database" };
 
-
-            ViewData["Variable1"] = 2;
-            return View();
+            // Here we would populate the data object with data from the database
+            
+            return View(data);
         }
 
-
-
-
-
-
-
-
+        
 
         public IActionResult Privacy()
         {
