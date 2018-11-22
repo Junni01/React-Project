@@ -5,31 +5,57 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 
+    <script>var Animals = []; </script>
+
+    foreach (var datanode in Model)
+    {
+
+        <script>
+
+            var animal = {
+                id: "@datanode.id",
+                name: "@datanode.name",
+                species: "@datanode.species",
+                latinname: "@datanode.latinSpeciesName",
+                gender: "@datanode.gender",
+                slogan: "@datanode.slogan"
+            };
+            Animals.push(animal);         
+            // Animals.push(animal);
+        </script>
+
+        
+
+    }
+
+
 }
 
 <script>
-    var DataObject = {
 
-        id: "@Model.id",
-
-        name: "@Model.name",
-
-        isActive: "@Model.isActive",
-
-        price: "@Model.price",
-
-        description: "@Model.description"
-        
+    var Animals2 = [];
+    var index = Math.floor((Math.random() * 100) + 1);
+    for (var i = 0; i < 11; i++) {
+        index += 1;
+        //console.log("Index is: " + index);
+        //console.log(Animals[index]);
+        Animals2.push(Animals[index]);
     }
+    //console.log(Animals2);
+    //console.log(Animals);
+    //console.log(Animals[100]);
 </script>
 
 
-
 <h2>Data Handling</h2>
-<div id="data">moi</div>
-<div id="data2">moi</div>
-<div id="data3">moi</div>
-<div id="data4">moi</div>
+<div class="container">
+        <div id="data"></div>
+</div>
+
+
+
+
+
 
 
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>

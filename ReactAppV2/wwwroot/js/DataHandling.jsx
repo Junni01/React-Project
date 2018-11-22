@@ -1,70 +1,39 @@
 ﻿
-class Data1 extends React.Component {
-  render() {
-    
-      return (
-        <ul>
-        <li>{DataObject.id}</li>
-        <li>{DataObject.name}</li>
-        <li>{DataObject.isActive}</li>
-        <li>{DataObject.price}</li>
-        <li>{DataObject.description}</li>
-      </ul> 
-      );
-  }
-}
+class Data extends React.Component {
+  constructor(props) {
+    super(props);
 
-class Data2 extends React.Component {
-    render() {
-      
-        return (
-          <ul>
-          <li>{DataObject.id}</li>
-          <li>{DataObject.name}</li>
-          <li>{DataObject.isActive}</li>
-          <li>{DataObject.price}</li>
-          <li>{DataObject.description}</li>
-        </ul> 
-        );
-    }
-  }
-
-  class Data3 extends React.Component {
-    render() {
-      
-        return (
-          <ul>
-          <li>{DataObject.id}</li>
-          <li>{DataObject.name}</li>
-          <li>{DataObject.isActive}</li>
-          <li>{DataObject.price}</li>
-          <li>{DataObject.description}</li>
-        </ul> 
-        );
-    }
+    this.state = {
+      hits: [],
+    };
   }
   
-  class Data4 extends React.Component {
+  
   render() {
-    
+    console.log(Animals2);    
+
       return (
+
+        <div className="row">       
+        {Animals2.map(animal => 
+        <div key={animal.id} className="col-md-4" >
+        <h2>{animal.name}</h2>
         <ul>
-        <li>{DataObject.id}</li>
-        <li>{DataObject.name}</li>
-        <li>{DataObject.isActive}</li>
-        <li>{DataObject.price}</li>
-        <li>{DataObject.description}</li>
-      </ul> 
+        <li><b>Species: </b> {animal.species}</li>
+        <li><b>Latin name: </b> {animal.latinname}</li>
+        <li><b>Gender: </b> {animal.gender}</li>
+        <li><b>Slogan: </b>{animal.slogan}</li>
+        </ul>
+        </div>
+        )}        
+        </div>
       );
   }
 }
 
 
+ReactDOM.render(<Data />, document.getElementById('data'));
 
-ReactDOM.render(<Data1 />, document.getElementById('data'));
-ReactDOM.render(<Data2 />, document.getElementById('data2'));
-ReactDOM.render(<Data3 />, document.getElementById('data3'));
-ReactDOM.render(<Data4 />, document.getElementById('data4'));
 
 
 

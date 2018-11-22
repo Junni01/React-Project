@@ -29,11 +29,15 @@ namespace ReactAppV2.Controllers
 
 
         {
-            DataPackage data = new DataPackage() { id = 1, isActive = true, name = "datanode1", price = 23.23, description = "generic data packege from the database" };
+            // DataPackage data = new DataPackage() { id = 1, isActive = true, name = "datanode1", price = 23.23, description = "generic data packege from the database" };
+
+            var dataloader = new DataLoader();
+
+            List<DataPackage> datalist = dataloader.GetDataList();
 
             // Here we would populate the data object with data from the database
-            
-            return View(data);
+           
+            return View(datalist);
         }
 
         
