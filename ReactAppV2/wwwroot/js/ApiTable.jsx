@@ -1,51 +1,79 @@
-﻿const API = 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten';
+﻿const APIkey = 'bfd597269abc4e649418f65659c93f1a'; 
+const ApiQuery = 'bitcoin'
+const ApiDate = '2018-10-22' 
+const API = "https://newsapi.org/v2/everything?q=" + ApiQuery + "&from=" + ApiDate + "&sortBy=publishedAt&apiKey=" + APIkey
+
+
 
 class ApiTable extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      hits: [],
+      news: [],
+      value: "gooby"
     };
   }
 
   componentDidMount() {
     fetch(API)
       .then(response => response.json())
-      .then(data => this.setState({ hits: data }));
+      .then(data => this.setState({ news: data.articles }));
   }
 
+  searched() {
+    console.log("moi")
+    fetch("https://newsapi.org/v2/everything?q=" + a + "&from=" + ApiDate + "&sortBy=publishedAt&apiKey=" + APIkey)
+      .then(response => response.json())
+      .then(data => this.setState({ news: data.articles }));
+  }
+
+
+
+
   render() {
-    const { hits } = this.state;
-    console.log("this state: ")
-    console.log(this.state)
-    console.log("hits muuttuja:")
-    console.log(hits)
-    
+    const { news } = this.state;
     
     return (
-      <table className="table">
+    
+    <div>  
+    <input type='text' className="input" placeholder="Search..." />
+    <button type="button" className="btn btn-default" onClick={}>GO</button>
+    <table className="table">
         <tbody>
         <tr>
-    <th>Type</th>
-    <th>Setup</th>
-    <th>Punchline</th>
+    <th>Author</th>
+    <th>Pic</th>
+    <th>Description</th>
+    <th>Published</th>
+    <th>Source</th>
+    <th>URL</th>
         </tr>
-            {hits.map((hit, index) =>
+          {news.map((newpiece, index) =>
               <tr key={index}>
               <td>
-              {hit.type} 
+              {newpiece.author} 
               </td>
               <td>
-              {hit.setup}
+              <img src={newpiece.urlToImage} className="img-responsive"/>
               </td>
               <td>
-              {hit.punchline}
+              {newpiece.description}
+              </td>
+              <td>
+              {newpiece.publishedAt}
+              </td>
+              <td>
+              {newpiece.source.name}
+              </td>
+              <td>
+              <a href={newpiece.url}>Link</a>
               </td>
               </tr>
-            )}
+          )}
       </tbody>
     </table>
+    </div>
     );
   }
 }
