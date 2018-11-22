@@ -18,7 +18,7 @@ namespace ReactAppV2.Controllers
 
         public IActionResult ApiTable()
         {
-            ViewData["Message"] = "This component fetches 10 random jokes from a public API and displays them as a table";
+            ViewData["Message"] = "This page fetches news from an open api. Use the textbox to search for news with a custom search query";
 
             return View();
 

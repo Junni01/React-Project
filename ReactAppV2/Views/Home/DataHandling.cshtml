@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 
-    <script>var Animals = []; </script>
+    <script>var Animals2 = []; </script>
 
     foreach (var datanode in Model)
     {
@@ -20,7 +20,7 @@
                 gender: "@datanode.gender",
                 slogan: "@datanode.slogan"
             };
-            Animals.push(animal);         
+            Animals2.push(animal);         
             // Animals.push(animal);
         </script>
 
@@ -31,23 +31,10 @@
 
 }
 
-<script>
-
-    var Animals2 = [];
-    var index = Math.floor((Math.random() * 100) + 1);
-    for (var i = 0; i < 11; i++) {
-        index += 1;
-        //console.log("Index is: " + index);
-        //console.log(Animals[index]);
-        Animals2.push(Animals[index]);
-    }
-    //console.log(Animals2);
-    //console.log(Animals);
-    //console.log(Animals[100]);
-</script>
 
 
 <h2>Data Handling</h2>
+<h3>This page fetches data from a back-end database, originally from a .csv file in the app's root folder. But Azure won't allow the app to read physical files so now the data is generated at runtime in the back-end and displayed here. The displayed data can be filtered with the textbox.</h3>
 <div class="container">
         <div id="data"></div>
 </div>
