@@ -33,7 +33,7 @@ class ApiData extends React.Component {
   
 
   let term = this.state.value;
-  let mountapi = "https://newsapi.org/v2/everything?q=" + term + "&from=2018-10-22&sortBy=publishedAt&apiKey=bfd597269abc4e649418f65659c93f1a"
+  let mountapi = "https://newsapi.org/v2/everything?q=" + term + "&sortBy=publishedAt&apiKey=bfd597269abc4e649418f65659c93f1a"
 
   fetch(mountapi)
   .then(response => response.json())
@@ -42,7 +42,8 @@ class ApiData extends React.Component {
   }
 
   componentWillMount() {
-    mountapi = "https://newsapi.org/v2/everything?q=Bitcoin&from=2018-10-22&sortBy=publishedAt&apiKey=bfd597269abc4e649418f65659c93f1a"
+      mountapi = "https://newsapi.org/v2/everything?q=Bitcoin&sortBy=publishedAt&apiKey=bfd597269abc4e649418f65659c93f1a"
+      console.log(mountapi)
     fetch(mountapi)
       .then(response => response.json())
       .then(data => this.setState({ news: data.articles }));
