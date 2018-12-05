@@ -45,7 +45,7 @@ namespace ReactAppV2.Models
 
             //reader.Close();
 
-
+            // This were the Datalist is seeded manually with data to display.
 
             List<DataPackage> DataList = new List<DataPackage>()
             {

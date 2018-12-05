@@ -1,4 +1,9 @@
-﻿const APIkey = 'bfd597269abc4e649418f65659c93f1a'; 
+﻿
+// These components query the public new API and display it on the page. The fetch method takes care of the API handling, when the document is loaded it uses the dafult query "bitcoin" to fetch news to a table
+// The user can search with a custom query which is inserted into the API call and the table is refreshed (or whatever it is called in React.)
+
+
+const APIkey = 'bfd597269abc4e649418f65659c93f1a'; 
 const ApiQuery = 'bitcoin'
 const ApiDate = '2018-10-22' 
 

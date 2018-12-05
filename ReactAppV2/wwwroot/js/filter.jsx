@@ -1,3 +1,7 @@
+
+// This is the filter component we use to filter the dataset in real time. 
+
+
 class filter extends React.Component {
 
     constructor(props) {

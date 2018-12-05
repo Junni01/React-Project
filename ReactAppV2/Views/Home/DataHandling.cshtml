@@ -4,7 +4,8 @@
     ViewData["Title"] = "Data Handling";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-
+    // This is where the frontend meets the backend. We get a list of objects through the "model" which we capture into a javascript array of objects using a simple foreach loop
+    // I think it could be possible to use the model inside a react component too and skip this step but I didn't have time to try it out. The model comes from the home controller which has a route for this site.
     <script>var Animals2 = []; </script>
 
     foreach (var datanode in Model)
@@ -32,7 +33,7 @@
 }
 
 
-
+@* This is the Div where the React stuff is generated.*@
 <h2>Data Handling</h2>
 <h3>This page fetches data from a back-end database, originally from a .csv file in the app's root folder. But Azure won't allow the app to read physical files so now the data is generated at runtime in the back-end and displayed here. The displayed data can be filtered with the textbox.</h3>
 <div class="container">

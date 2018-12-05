@@ -1,4 +1,6 @@
-﻿
+﻿// These compnents handle the display of the components of the animals table. Basically this could be done by querying the back end in real time but now it just receives a static dataset from the back and works with it. 
+
+
 class Handler extends React.Component {
   constructor(props) {
     super(props);

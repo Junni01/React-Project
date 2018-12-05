@@ -40,6 +40,14 @@ namespace ReactAppV2.Controllers
             return View(datalist);
         }
 
+
+        public IActionResult DataGraphs()
+        {
+
+            return View();
+        }
+
+
         
 
         public IActionResult Privacy()
